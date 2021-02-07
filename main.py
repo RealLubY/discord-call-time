@@ -22,7 +22,7 @@ async def on_ready():
     for i in timelist:
         total_time += i
     print("-----------")
-    print(f"{str(datetime.timedelta(seconds=total_time))}")
+    print(f"{str(datetime.timedelta(seconds=total_time))} -- SECS: {total_time}")
     print("-----------")
 
 @bot.event
@@ -30,6 +30,5 @@ async def on_command_error(ctx, error):
     if isinstance(error, discord.ext.commands.CommandNotFound):
         return
     raise error
-
 
 bot.run("", bot=False) # TOKEN
